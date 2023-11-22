@@ -29,8 +29,21 @@ november = [ 2400, 1800, 1500, 1500, 1500, 1100, 1000, 1000, 1000, 770, 700, 700
 #     ▪ Füzze az eredményt a 'változás' lista végéhez!
 # ▪ A ciklus után írja képernyőre a kiszámolt adatokat!
 
+változás = []
+i = 0
+
+while i < len(december):
+    százalék = (december[i] / november[i] - 1) * 100
+    kerekitve = round(százalék, 2)
+    változás.append(kerekitve)
+    i += 1
 
 # 3. feladat
 # ▪ importálja a json modult!
 # ▪ készítsen az adatokból szótárat
 # ▪ mentse fájlba data.json néven!
+
+import json
+
+with open("data.json", "w") as fájl:
+    json.dump(változás, fájl)
